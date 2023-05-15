@@ -66,8 +66,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* overflow: hidden; */
-    transition: height .2s ease;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, rheight .2s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
 }
 
 .wrapper.active {
@@ -81,11 +86,24 @@ body {
 
 .wrapper .form-box.login {
     /* display: none; */
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    position: absolute;
+    transform: translateX(-400px);
 }
 
 .wrapper .form-box.register {
     position: absolute;
     transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    /* display: none; */
+    transition: transform .18s ease;
+    transform: translateX(0);
 }
 
 
